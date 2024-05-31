@@ -15,6 +15,10 @@
 #' @export
 #'
 #' @examples
+#'http_api_request(
+#'  path = "https://apidadosabertos.saude.gov.br/sisvan/estado-nutricional",
+#'  uf = "SP"
+#')
 http_api_request <- function(path, ..., list = NULL) {
   checkmate::assert_string(path, pattern = "^http+[s]?:/")
   checkmate::assert_list(list, min.len = 1, null.ok = TRUE)

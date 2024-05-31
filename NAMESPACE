@@ -3,4 +3,4 @@
 export(fetch_demas_sisvan)
 export(http_api_request)
 importFrom(dplyr,"%>%")
-importFrom(lifecycle,deprecate_soft)
+importFrom(lifecycle,deprecated)
