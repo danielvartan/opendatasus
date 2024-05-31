@@ -1,0 +1,42 @@
+url: https://danielvartan.github.io/opendatasus/
+
+template:
+  params:
+    bootswatch: cosmo
+    mathjax: true
+    noindex: false
+
+navbar:
+  structure:
+    left:
+    - home
+    - intro
+    - reference
+    - articles
+    - news
+    right: github
+  components:
+    home: ~
+    intro: ~
+    articles: ~
+
+reference:
+- title: Fetching data
+  desc: >
+    Functions to fetch data from the OpenDataSUS APIs.
+  contents:
+  - fetch_demas_sisvan
+
+- title: Utilities
+  desc: >
+    Other functions to help with the APIs.
+  contents:
+  - http_api_request
+
+authors:
+  Daniel Vartanian:
+    href: https://github.com/danielvartan
+
+development:
+  mode: unreleased
+  version_label: warning
