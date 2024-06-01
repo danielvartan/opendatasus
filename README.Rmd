@@ -45,6 +45,19 @@ You can install `opendatasus` using:
 remotes::install_github("danielvartan/opendatasus")
 ```
 
+## Usage
+
+We're working on new API functions to make it easier to access the data available on the openDataSUS platform. You can find a list of available functions [here](https://danielvartan.github.io/opendatasus/reference/index.html).
+
+Example of use:
+
+```{r}
+library(opendatasus)
+
+fetch_demas_sisvan(uf = "SP") |>
+  dplyr::glimpse()
+```
+
 ## Citation
 
 If you use `opendatasus` in your research, please consider citing it. We have put a lot of work into building and maintaining this free and open-source R package. The citation can be found below.
