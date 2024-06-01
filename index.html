@@ -90,10 +90,56 @@
 <span><span class="fu">remotes</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"danielvartan/opendatasus"</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
+<h2 id="usage">Usage<a class="anchor" aria-label="anchor" href="#usage"></a>
+</h2>
+<p>We’re working on new API functions to make it easier to access the data available on the openDataSUS platform. You can find a list of available functions <a href="https://danielvartan.github.io/opendatasus/reference/index.html">here</a>.</p>
+<p>Example of use:</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://danielvartan.github.io/opendatasus/">opendatasus</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="reference/fetch_demas_sisvan.html">fetch_demas_sisvan</a></span><span class="op">(</span>uf <span class="op">=</span> <span class="st">"SP"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html" class="external-link">glimpse</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Rows: 20</span></span>
+<span><span class="co">#&gt; Columns: 33</span></span>
+<span><span class="co">#&gt; $ status_participacao                    &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA, NA,…</span></span>
+<span><span class="co">#&gt; $ codigo_municipio                       &lt;int&gt; 354240, 351880, 351630, 354220,…</span></span>
+<span><span class="co">#&gt; $ uf                                     &lt;chr&gt; "SP", "SP", "SP", "SP", "SP", "…</span></span>
+<span><span class="co">#&gt; $ municipio                              &lt;chr&gt; "REGENTE FEIJO", "GUARULHOS", "…</span></span>
+<span><span class="co">#&gt; $ codigo_cnes                            &lt;chr&gt; "2751151", "2062119", "2083809"…</span></span>
+<span><span class="co">#&gt; $ idade                                  &lt;int&gt; 9, 31, 4, 3, 26, 57, 26, 65, 50…</span></span>
+<span><span class="co">#&gt; $ codigo_fase_vida                       &lt;dbl&gt; 5, 7, 3, 3, 7, 7, 7, 8, 7, 8, 2…</span></span>
+<span><span class="co">#&gt; $ fase_vida                              &lt;chr&gt; "ENTRE 7 ANOS A 10 ANOS", "ADUL…</span></span>
+<span><span class="co">#&gt; $ sexo                                   &lt;chr&gt; "M", "F", "F", "M", "F", "F", "…</span></span>
+<span><span class="co">#&gt; $ codigo_raca_cor                        &lt;chr&gt; "01", "04", "01", "01", "01", "…</span></span>
+<span><span class="co">#&gt; $ raca_cor                               &lt;chr&gt; "BRANCA", "PARDA", "BRANCA", "B…</span></span>
+<span><span class="co">#&gt; $ codigo_povo_comunidade                 &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA, NA,…</span></span>
+<span><span class="co">#&gt; $ povo_comunidade                        &lt;chr&gt; "NÃO INFORMADO", "NÃO INFORMADO…</span></span>
+<span><span class="co">#&gt; $ codigo_escolaridade                    &lt;int&gt; 99, 99, 99, 99, 6, 5, 6, NA, NA…</span></span>
+<span><span class="co">#&gt; $ escolaridade                           &lt;chr&gt; "SEM INFORMAÇÃO", "SEM INFORMAÇ…</span></span>
+<span><span class="co">#&gt; $ data_acompanhamento                    &lt;chr&gt; "2016-02-02", "2016-02-29", "20…</span></span>
+<span><span class="co">#&gt; $ ano_mes_competencia                    &lt;chr&gt; "201602", "201602", "201602", "…</span></span>
+<span><span class="co">#&gt; $ peso                                   &lt;chr&gt; "51.00", "100", "15", "15.2", "…</span></span>
+<span><span class="co">#&gt; $ altura                                 &lt;chr&gt; "174", "164", "75", "98", "1.59…</span></span>
+<span><span class="co">#&gt; $ imc                                    &lt;chr&gt; "16.85", "37.18", "26.67", "15.…</span></span>
+<span><span class="co">#&gt; $ imc_pre_gestacional                    &lt;chr&gt; NA, NA, NA, NA, NA, NA, "32.4",…</span></span>
+<span><span class="co">#&gt; $ peso_x_idade                           &lt;chr&gt; "Peso elevado para a idade", NA…</span></span>
+<span><span class="co">#&gt; $ peso_x_altura                          &lt;chr&gt; NA, NA, "Obesidade", "Peso Adeq…</span></span>
+<span><span class="co">#&gt; $ crianca_altura_x_idade                 &lt;chr&gt; "Estatura adequada para a idade…</span></span>
+<span><span class="co">#&gt; $ crianca_imc_x_idade                    &lt;chr&gt; "Eutrofia", NA, "Obesidade", "E…</span></span>
+<span><span class="co">#&gt; $ adolescente_altura_x_idade             &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA,…</span></span>
+<span><span class="co">#&gt; $ adolescente_imc_x_idade                &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA,…</span></span>
+<span><span class="co">#&gt; $ codigo_estado_nutricional_adulto       &lt;chr&gt; NA, "Obesidade Grau II", NA, NA…</span></span>
+<span><span class="co">#&gt; $ codigo_estado_nutricional_idoso        &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, "So…</span></span>
+<span><span class="co">#&gt; $ codigo_estado_nutricional_imc_gestante &lt;chr&gt; NA, NA, NA, NA, NA, NA, "Adequa…</span></span>
+<span><span class="co">#&gt; $ codigo_sistema_origem_acompanhamento   &lt;int&gt; 1, 2, 2, 2, 1, 1, 1, 4, 4, 4, 4…</span></span>
+<span><span class="co">#&gt; $ sistema_origem_acompanhamento          &lt;chr&gt; "SISVAN WEB", "AUXILIO BRASIL",…</span></span>
+<span><span class="co">#&gt; $ codigo_sequencial_acompanhamento       &lt;int&gt; 969128171, 978846659, 978880325…</span></span></code></pre></div>
+</div>
+<div class="section level2">
 <h2 id="citation">Citation<a class="anchor" aria-label="anchor" href="#citation"></a>
 </h2>
 <p>If you use <code>opendatasus</code> in your research, please consider citing it. We have put a lot of work into building and maintaining this free and open-source R package. The citation can be found below.</p>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/citation.html" class="external-link">citation</a></span><span class="op">(</span><span class="st">"opendatasus"</span><span class="op">)</span></span>
 <span><span class="co">#&gt; To cite {opendatasus} in publications use:</span></span>
 <span><span class="co">#&gt; </span></span>
