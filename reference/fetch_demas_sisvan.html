@@ -9,7 +9,7 @@ Interface)."><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]--></head><body data-spy="scroll" data-target="#toc">
-    
+
 
     <div class="container template-reference-topic">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -37,20 +37,20 @@ Interface)."><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs
       </ul><ul class="nav navbar-nav navbar-right"><li>
   <a href="https://github.com/danielvartan/opendatasus/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
-     
+
   </a>
 </li>
       </ul></div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
 
-      
+
 
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Fetch data from the SISVAN API</h1>
-    <small class="dont-index">Source: <a href="https://github.com/danielvartan/opendatasus/blob/HEAD/R/fetch_demas_sisvan.R" class="external-link"><code>R/fetch_demas_sisvan.R</code></a></small>
+    <small class="dont-index">Source: <a href="https://github.com/danielvartan/opendatasus/blob/main/R/fetch_demas_sisvan.R" class="external-link"><code>R/fetch_demas_sisvan.R</code></a></small>
     <div class="hidden name"><code>fetch_demas_sisvan.Rd</code></div>
     </div>
 
@@ -83,77 +83,77 @@ Interface).</p>
 
     <div id="arguments">
     <h2>Arguments</h2>
-    <dl><dt>codigo_municipio</dt>
+
+
+<dl><dt id="arg-codigo-municipio">codigo_municipio<a class="anchor" aria-label="anchor" href="#arg-codigo-municipio"></a></dt>
 <dd><p>(optional) an integer number with the city code
 (default: <code>NULL</code>).</p></dd>
 
 
-<dt>uf</dt>
+<dt id="arg-uf">uf<a class="anchor" aria-label="anchor" href="#arg-uf"></a></dt>
 <dd><p>(optional) a string with the state code (default: <code>NULL</code>).</p></dd>
 
 
-<dt>codigo_cnes</dt>
+<dt id="arg-codigo-cnes">codigo_cnes<a class="anchor" aria-label="anchor" href="#arg-codigo-cnes"></a></dt>
 <dd><p>(optional) a string with the
 <a href="https://cnes.datasus.gov.br/" class="external-link">CNES</a> (Cadastro Nacional de Estabelecimentos
 de Saúde) code (default: <code>NULL</code>).</p></dd>
 
 
-<dt>idade_minima</dt>
+<dt id="arg-idade-minima">idade_minima<a class="anchor" aria-label="anchor" href="#arg-idade-minima"></a></dt>
 <dd><p>(optional) an integer number with the minimum age
 (default: <code>NULL</code>).</p></dd>
 
 
-<dt>idade_maxima</dt>
+<dt id="arg-idade-maxima">idade_maxima<a class="anchor" aria-label="anchor" href="#arg-idade-maxima"></a></dt>
 <dd><p>(optional) an integer number with the maximum age
 (default: <code>NULL</code>).</p></dd>
 
 
-<dt>codigo_fase_vida</dt>
+<dt id="arg-codigo-fase-vida">codigo_fase_vida<a class="anchor" aria-label="anchor" href="#arg-codigo-fase-vida"></a></dt>
 <dd><p>(optional) an integer number with the life phase
 code.</p></dd>
 
 
-<dt>codigo_povo_comunidade</dt>
+<dt id="arg-codigo-povo-comunidade">codigo_povo_comunidade<a class="anchor" aria-label="anchor" href="#arg-codigo-povo-comunidade"></a></dt>
 <dd><p>(optional) an integer number with the
 people/community code (default: <code>NULL</code>).</p></dd>
 
 
-<dt>codigo_escolaridade</dt>
+<dt id="arg-codigo-escolaridade">codigo_escolaridade<a class="anchor" aria-label="anchor" href="#arg-codigo-escolaridade"></a></dt>
 <dd><p>(optional) an integer number with the education
 code (default: <code>NULL</code>).</p></dd>
 
 
-<dt>ano_mes_competencia</dt>
+<dt id="arg-ano-mes-competencia">ano_mes_competencia<a class="anchor" aria-label="anchor" href="#arg-ano-mes-competencia"></a></dt>
 <dd><p>(optional) a string with the year and month of
 the competition (e.g., "202301") (default: <code>NULL</code>).</p></dd>
 
 
-<dt>gestante</dt>
+<dt id="arg-gestante">gestante<a class="anchor" aria-label="anchor" href="#arg-gestante"></a></dt>
 <dd><p>(optional) an integer number (0 or 1) representing the
 pregnancy status (<code>0</code> for <code>FALSE</code> and <code>1</code> for <code>TRUE</code>) (default: <code>NULL</code>).</p></dd>
 
 
-<dt>limit</dt>
+<dt id="arg-limit">limit<a class="anchor" aria-label="anchor" href="#arg-limit"></a></dt>
 <dd><p>(optional) an integer number with the maximum number of
 records to return (maximum value: 20) (default: <code>20</code>).</p></dd>
 
 
-<dt>offset</dt>
+<dt id="arg-offset">offset<a class="anchor" aria-label="anchor" href="#arg-offset"></a></dt>
 <dd><p>(optional) an integer number with the number of records to
 skip (default: <code>NULL</code>).</p></dd>
 
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    
-
-<p>A <code><a href="https://dplyr.tidyverse.org/reference/reexports.html" class="external-link">tibble</a></code> object with the content of the API
+    <p>A <code><a href="https://dplyr.tidyverse.org/reference/reexports.html" class="external-link">tibble</a></code> object with the content of the API
 response.</p>
     </div>
     <div id="details">
     <h2>Details</h2>
-    <p>Learn more about the SISVAN API at:</p><ul><li><p>https://opendatasus.saude.gov.br/dataset/sisvan-estado-nutricional</p></li>
-<li><p>https://apidadosabertos.saude.gov.br/v1/</p></li>
+    <p>Learn more about the SISVAN API at:</p><ul><li><p><a href="https://opendatasus.saude.gov.br/dataset/sisvan-estado-nutricional" class="external-link">https://opendatasus.saude.gov.br/dataset/sisvan-estado-nutricional</a></p></li>
+<li><p><a href="https://apidadosabertos.saude.gov.br/v1/" class="external-link">https://apidadosabertos.saude.gov.br/v1/</a></p></li>
 </ul></div>
 
     <div id="ref-examples">
@@ -163,38 +163,38 @@ response.</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Rows: 20</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Columns: 33</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $ status_participacao                    <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span> NA, NA, NA, NA, NA, NA, NA, NA,…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $ codigo_municipio                       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 354240, 351880, 351630, 354220,…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $ codigo_municipio                       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 354780, 351380, 354530, 350100,…</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $ uf                                     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "SP", "SP", "SP", "SP", "SP", "…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $ municipio                              <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "REGENTE FEIJO", "GUARULHOS", "…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $ codigo_cnes                            <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "2751151", "2062119", "2083809"…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $ idade                                  <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 9, 31, 4, 3, 26, 57, 26, 65, 50…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $ codigo_fase_vida                       <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 5, 7, 3, 3, 7, 7, 7, 8, 7, 8, 2…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $ fase_vida                              <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "ENTRE 7 ANOS A 10 ANOS", "ADUL…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $ sexo                                   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "M", "F", "F", "M", "F", "F", "…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $ codigo_raca_cor                        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "01", "04", "01", "01", "01", "…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $ raca_cor                               <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "BRANCA", "PARDA", "BRANCA", "B…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $ municipio                              <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "SANTO ANDRE", "DIADEMA", "SALT…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $ codigo_cnes                            <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> NA, "2801191", "2749254", "2094…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $ idade                                  <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 31, 63, 57, 47, 67, 66, 1, 2, 6…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $ codigo_fase_vida                       <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 7, 8, 7, 7, 8, 8, 2, 3, 4, 2, 1…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $ fase_vida                              <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "ADULTO", "IDOSO", "ADULTO", "A…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $ sexo                                   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "F", "M", "F", "F", "F", "M", "…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $ codigo_raca_cor                        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "02", "01", "01", "01", "99", "…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $ raca_cor                               <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "PRETA", "BRANCA", "BRANCA", "B…</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $ codigo_povo_comunidade                 <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span> NA, NA, NA, NA, NA, NA, NA, NA,…</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $ povo_comunidade                        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "NÃO INFORMADO", "NÃO INFORMADO…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $ codigo_escolaridade                    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 99, 99, 99, 99, 6, 5, 6, NA, NA…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $ codigo_escolaridade                    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 99, NA, NA, NA, 99, NA, NA, NA,…</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $ escolaridade                           <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "SEM INFORMAÇÃO", "SEM INFORMAÇ…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $ data_acompanhamento                    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "2016-02-02", "2016-02-29", "20…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $ ano_mes_competencia                    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "201602", "201602", "201602", "…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $ peso                                   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "51.00", "100", "15", "15.2", "…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $ altura                                 <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "174", "164", "75", "98", "1.59…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $ imc                                    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "16.85", "37.18", "26.67", "15.…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $ imc_pre_gestacional                    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> NA, NA, NA, NA, NA, NA, "32.4",…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $ peso_x_idade                           <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "Peso elevado para a idade", NA…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $ peso_x_altura                          <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> NA, NA, "Obesidade", "Peso Adeq…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $ crianca_altura_x_idade                 <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "Estatura adequada para a idade…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $ crianca_imc_x_idade                    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "Eutrofia", NA, "Obesidade", "E…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $ data_acompanhamento                    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "2021-02-26", "2021-02-08", "20…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $ ano_mes_competencia                    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "202102", "202102", "202102", "…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $ peso                                   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "93,4", "94,6", "101,5", "90", …</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $ altura                                 <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "160", "176", "151", "161", "15…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $ imc                                    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "36,48", "30,54", "44,52", "34,…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $ imc_pre_gestacional                    <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span> NA, NA, NA, NA, NA, NA, NA, NA,…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $ peso_x_idade                           <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> NA, NA, NA, NA, NA, NA, "Peso a…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $ peso_x_altura                          <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> NA, NA, NA, NA, NA, NA, "Peso A…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $ crianca_altura_x_idade                 <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> NA, NA, NA, NA, NA, NA, "Estatu…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $ crianca_imc_x_idade                    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> NA, NA, NA, NA, NA, NA, "Eutrof…</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $ adolescente_altura_x_idade             <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> NA, NA, NA, NA, NA, NA, NA, NA,…</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $ adolescente_imc_x_idade                <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> NA, NA, NA, NA, NA, NA, NA, NA,…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $ codigo_estado_nutricional_adulto       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> NA, "Obesidade Grau II", NA, NA…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $ codigo_estado_nutricional_idoso        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> NA, NA, NA, NA, NA, NA, NA, "So…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $ codigo_estado_nutricional_imc_gestante <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> NA, NA, NA, NA, NA, NA, "Adequa…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $ codigo_sistema_origem_acompanhamento   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 1, 2, 2, 2, 1, 1, 1, 4, 4, 4, 4…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $ sistema_origem_acompanhamento          <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "SISVAN WEB", "AUXILIO BRASIL",…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $ codigo_sequencial_acompanhamento       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 969128171, 978846659, 978880325…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $ codigo_estado_nutricional_adulto       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "Obesidade Grau II", NA, "Obesi…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $ codigo_estado_nutricional_idoso        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> NA, "Sobrepeso", NA, NA, "Adequ…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $ codigo_estado_nutricional_imc_gestante <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "Obesidade", NA, NA, NA, NA, NA…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $ codigo_sistema_origem_acompanhamento   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 2, 4, 4, 4, 4, 4, 4, 2, 2, 4, 4…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $ sistema_origem_acompanhamento          <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "AUXILIO BRASIL", "E-SUS AB", "…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $ codigo_sequencial_acompanhamento       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 1315131895, 1292981458, 1292981…</span>
 </code></pre></div>
     </div>
   </div>
@@ -209,15 +209,15 @@ response.</p>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.9.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.0.</p>
 </div>
 
       </footer></div>
 
-  
 
 
-  
+
+
 
   </body></html>
 
