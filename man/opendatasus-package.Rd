@@ -4,7 +4,7 @@
 \name{opendatasus-package}
 \alias{opendatasus}
 \alias{opendatasus-package}
-\title{opendatasus: Access openDataSUS APIs in R}
+\title{opendatasus: Access to openDataSUS APIs in R}
 \description{
 opendatasus is a user-friendly R package designed for downloading and processing data from the DATASUS's openDataSUS platform.
 }

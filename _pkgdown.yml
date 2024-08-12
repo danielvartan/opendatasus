@@ -27,7 +27,7 @@ reference:
   contents:
   - fetch_demas_sisvan
 
-- title: Utilities
+- title: Helpers
   desc: >
     Other functions to help with the APIs.
   contents:

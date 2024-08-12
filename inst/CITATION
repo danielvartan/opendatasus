@@ -3,7 +3,7 @@ utils::bibentry(
   bibtype  = "Unpublished",
   title = paste0(
     "{opendatasus}:", " ",
-    "access openDataSUS APIs in R"
+    "access to openDataSUS APIs in R"
   ),
   author = c(
     utils::person(
@@ -24,7 +24,7 @@ utils::bibentry(
     "Vartanian, D.", " ",
     "(2024)",  ". ",
     "{opendatasus}:", " ",
-    "access openDataSUS APIs in R", ". ",
+    "access to openDataSUS APIs in R", ". ",
     "R package version 0.0.1.9000", ". ",
     "https://danielvartan.github.io/",
     "opendatasus/"

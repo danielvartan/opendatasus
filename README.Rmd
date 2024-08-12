@@ -30,6 +30,10 @@ library(opendatasus)
 
 `opendatasus` is an user-friendly R package designed for downloading and processing data from the [DATASUS](https://datasus.saude.gov.br/)'s [openDataSUS platform](https://opendatasus.saude.gov.br).
 
+It is important to be aware of the limitations of the APIs you are using. Many APIs have limitations regarding the amount of data and number of requests that can be made in a given period of time. Therefore, this package may not serve as a solution for large-scale data extraction.
+
+To access [DATASUS](https://datasus.saude.gov.br/)'s data not indexed on the [openDataSUS platform](https://opendatasus.saude.gov.br), check out Saldanha, Bastos & Barcellos's [`microdatasus`](https://github.com/rfsaldanha/microdatasus) R package, the [DATASUS's file transfer](https://datasus.saude.gov.br/transferencia-de-arquivos/) & [DATASUS's TabNet system](https://datasus.saude.gov.br/informacoes-de-saude-tabnet/).
+
 ## Prerequisites
 
 To use the main functions of `opendatasus`, some familiarity with the [R programming language](https://www.r-project.org/) is required.
@@ -54,8 +58,7 @@ Example of use:
 ```{r}
 library(opendatasus)
 
-fetch_demas_sisvan(uf = "SP") |>
-  dplyr::glimpse()
+fetch_demas_sisvan(uf = "SP") |> dplyr::glimpse()
 ```
 
 ## Citation

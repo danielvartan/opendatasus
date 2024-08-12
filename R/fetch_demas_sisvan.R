@@ -15,8 +15,8 @@
 #'
 #' Learn more about the SISVAN API at:
 #'
-#' * https://opendatasus.saude.gov.br/dataset/sisvan-estado-nutricional
-#' * https://apidadosabertos.saude.gov.br/v1/
+#' * \url{https://opendatasus.saude.gov.br/dataset/sisvan-estado-nutricional}
+#' * \url{https://apidadosabertos.saude.gov.br/v1/}
 #'
 #' @param codigo_municipio (optional) an integer number with the city code
 #'   (default: `NULL`).
@@ -35,11 +35,11 @@
 #' @param codigo_escolaridade (optional) an integer number with the education
 #'   code (default: `NULL`).
 #' @param ano_mes_competencia (optional) a string with the year and month of
-#'  the competition (e.g., "202301") (default: `NULL`).
+#'  the competition (e.g., `"202301"`) (default: `NULL`).
 #' @param gestante (optional) an integer number (0 or 1) representing the
 #'  pregnancy status (`0` for `FALSE` and `1` for `TRUE`) (default: `NULL`).
 #' @param limit (optional) an integer number with the maximum number of
-#'  records to return (maximum value: 20) (default: `20`).
+#'  records to return (maximum value: `20`) (default: `20`).
 #' @param offset (optional) an integer number with the number of records to
 #' skip (default: `NULL`).
 #'
@@ -50,13 +50,20 @@
 #' @export
 #'
 #' @examples
-#' fetch_demas_sisvan(uf = "SP") |>
-#'   dplyr::glimpse()
+#' fetch_demas_sisvan(uf = "SP") |> dplyr::glimpse()
 fetch_demas_sisvan <- function(
-  codigo_municipio = NULL, uf = NULL, codigo_cnes = NULL, idade_minima = NULL,
-  idade_maxima = NULL, codigo_fase_vida = NULL, codigo_povo_comunidade = NULL,
-  codigo_escolaridade = NULL, ano_mes_competencia = NULL, gestante = NULL,
-  limit = 20, offset = NULL
+  codigo_municipio = NULL,
+  uf = NULL,
+  codigo_cnes = NULL,
+  idade_minima = NULL,
+  idade_maxima = NULL,
+  codigo_fase_vida = NULL,
+  codigo_povo_comunidade = NULL,
+  codigo_escolaridade = NULL,
+  ano_mes_competencia = NULL,
+  gestante = NULL,
+  limit = 20,
+  offset = NULL
 ) {
   checkmate::assert_integerish(
     codigo_municipio, lower = 000001, upper = 999999, null.ok = TRUE
@@ -83,29 +90,20 @@ fetch_demas_sisvan <- function(
   checkmate::assert_integerish(
     limit, len = 1, lower = 1, upper = 20, null.ok = TRUE
   )
-  checkmate::assert_integerish(offset, len = 1, lower = 1, null.ok = TRUE)
+  checkmate::assert_integerish(offset, len = 1, lower = 0, null.ok = TRUE)
   rutils:::assert_internet()
 
   rutils:::require_pkg("curl", "jsonlite")
 
   args <- as.list(environment())
   base_url <- "https://apidadosabertos.saude.gov.br/sisvan/estado-nutricional"
-  api_call <- http_api_request(base_url, list = args)
-  get_status <- httr::GET(api_call)
+  api_request <- http_api_request(base_url, list = args)
+  assert_api_connection(api_request)
 
-  if (get_status$status_code >= 400) {
-    cli::cli_abort(paste0(
-      "{.strong {cli::col_blue(api_call)}} ",
-      "returned a {.strong {cli::col_red(get_status$status_code)}} status ",
-      "code. This may be caused by wrong parameters or by API ",
-      "shutdown."
-    ))
-  } else {
-    api_call |>
-      read_json() |>
-      magrittr::extract2("estados_nutricionais") |>
-      purrr::map_depth(2, ~ ifelse(is.null(.x), NA, .x)) |>
-      purrr::map(dplyr::as_tibble) |>
-      purrr::reduce(dplyr::add_row)
-  }
+  api_request |>
+    read_json() |>
+    magrittr::extract2("estados_nutricionais") |>
+    purrr::map_depth(2, ~ ifelse(is.null(.x), NA, .x)) |>
+    purrr::map(dplyr::as_tibble) |>
+    purrr::reduce(dplyr::add_row)
 }

@@ -1,3 +1,4 @@
+^\.analysis$
 ^\.github$
 ^\.lintr$
 ^\.Rproj\.user$

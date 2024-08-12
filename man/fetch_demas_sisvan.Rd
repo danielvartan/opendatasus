@@ -73,8 +73,8 @@ Interface).
 \details{
 Learn more about the SISVAN API at:
 \itemize{
-\item https://opendatasus.saude.gov.br/dataset/sisvan-estado-nutricional
-\item https://apidadosabertos.saude.gov.br/v1/
+\item \url{https://opendatasus.saude.gov.br/dataset/sisvan-estado-nutricional}
+\item \url{https://apidadosabertos.saude.gov.br/v1/}
 }
 }
 \examples{

@@ -9,11 +9,11 @@ http_api_request(path, ..., list = NULL)
 \arguments{
 \item{path}{A string representing the base URL of the API.}
 
-\item{...}{Named parameters to be included in the API call.}
+\item{...}{Named parameters to be included in the API request.}
 
 \item{list}{(optional) A \link[base:list]{list} object of named parameters to be
-included in the API call. This parameter should be used instead of \code{...} if
-the named parameters are already stored in a list.}
+included in the API request. This parameter should be used instead of
+\code{...} if the named parameters are already stored in a list.}
 }
 \value{
 A string representing the API request.
